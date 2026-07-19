@@ -521,6 +521,7 @@ a{ color: var(--teal-dark); text-decoration: none; }
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 .cert-thumb{
   width: 100%;
@@ -529,6 +530,7 @@ a{ color: var(--teal-dark); text-decoration: none; }
   object-position: top;
   border-bottom: 1px solid var(--border);
   background: var(--tint);
+  flex-shrink: 0;
 }
 .cert-thumb--icon{
   display: flex;
@@ -538,11 +540,23 @@ a{ color: var(--teal-dark); text-decoration: none; }
   background: linear-gradient(135deg, var(--teal-tint), var(--coral-tint));
 }
 .cert-card--resume .cert-title{ color: var(--teal-dark); }
-.cert-body{ padding: 1.4rem 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.cert-body{
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1 1 auto;
+}
 .cert-title{ margin: 0; font-size: 1.05rem; }
 .cert-issuer{ margin: 0; color: var(--ink-muted); font-size: 0.9rem; }
 .cert-date{ margin: 0 0 0.6rem; font-size: 0.85rem; color: var(--ink-soft); }
-.cert-body .btn{ align-self: stretch; text-align: center; margin-top: auto; }
+.cert-body .btn{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: auto;
+}
 
 /* =============================================================
    CONTACT
