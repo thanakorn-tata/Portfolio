@@ -28,9 +28,10 @@
     <nav class="site-nav" id="siteNav" aria-label="Main menu">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
-      <a href="#certificates">Certificates</a>
+      <a href="#downloads">Downloads</a>
       <a href="#contact" class="nav-cta">Contact Me</a>
     </nav>
 
@@ -192,6 +193,41 @@
     </div>
   </section>
 
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section">
+    <div class="wrap">
+      <p class="section-eyebrow">Projects</p>
+      <h2 class="section-title">Things I've built</h2>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-card__head">
+            <span class="dot dot-green"></span>
+            <span class="project-status">live</span>
+          </div>
+          <h3 class="project-title">Numprig — Thai Chili Paste E-Commerce</h3>
+          <p class="project-desc">
+            A full e-commerce site for "Look Thung Suphan" (ลูกทุ่งสุพรรณ), a Thai
+            chili paste (nam prik) brand — built end-to-end, frontend to backend.
+            Includes a storefront for customers, an admin panel to manage
+            products and users, sales reports, and a dashboard summarizing
+            total products and sales.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Angular</span>
+            <span class="tag">PrimeNG</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Java 17</span>
+          </div>
+          <div class="project-links">
+            <a href="https://final-numprig.vercel.app/" target="_blank" rel="noopener">Live Demo ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ EXPERIENCE ============ -->
   <section id="experience" class="section">
     <div class="wrap">
@@ -262,14 +298,24 @@
     </div>
   </section>
 
-  <!-- ============ CERTIFICATES ============ -->
-  <section id="certificates" class="section">
+  <!-- ============ DOWNLOADS: RESUME + CERTIFICATES ============ -->
+  <section id="downloads" class="section">
     <div class="wrap">
-      <p class="section-eyebrow">Certificates</p>
-      <h2 class="section-title">Professional certificates</h2>
-      <p class="section-sub">Issued by the Thailand Professional Qualification Institute (TPQI). Click download to view the full certificate.</p>
+      <p class="section-eyebrow">Downloads</p>
+      <h2 class="section-title">Resume &amp; certificates</h2>
+      <p class="section-sub">Everything you need in one place — my resume and professional certificates, ready to download.</p>
 
       <div class="cert-grid">
+
+        <article class="cert-card cert-card--resume">
+          <div class="cert-thumb cert-thumb--icon" aria-hidden="true">📄</div>
+          <div class="cert-body">
+            <h3 class="cert-title">Resume / CV</h3>
+            <p class="cert-issuer">Full work history, education, and skills — updated version</p>
+            <p class="cert-date">Java Developer · IT Support · Helpdesk</p>
+            <a href="assets/Thanakorn_Khomkham_Resume.pdf" class="btn btn-primary btn-sm" download>↓ Download Resume</a>
+          </div>
+        </article>
 
         <article class="cert-card">
           <img src="assets/cert-cybersecurity-thumb.jpg" alt="Cybersecurity Principle for Technology Practitioners certificate" class="cert-thumb">
@@ -284,7 +330,7 @@
         <article class="cert-card">
           <img src="assets/cert-ecommerce-thumb.jpg" alt="E-Commerce Professional Level 4 certificate" class="cert-thumb">
           <div class="cert-body">
-            <h3 class="cert-title">E-Commerce Professional — Level 4</h3><br>
+            <h3 class="cert-title">E-Commerce Professional — Level 4</h3>
             <p class="cert-issuer">Digital Business &amp; E-Commerce, Thailand Professional Qualification Institute (TPQI)</p>
             <p class="cert-date">Issued: 6 February 2026</p>
             <a href="assets/Certificate-Ecommerce-L4.pdf" class="btn btn-outline btn-sm" download>↓ Download Certificate</a>
