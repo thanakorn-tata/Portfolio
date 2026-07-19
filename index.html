@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thanakorn Khomkham — Java Developer / IT Support / Helpdesk</title>
+<meta name="description" content="Portfolio of Thanakorn Khomkham — aspiring Junior Developer & IT Support. Resume, certificates, skills and experience.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+    } catch (e) { /* default to light if storage is blocked */ }
+  })();
+</script>
 </head>
 <body>
 
@@ -20,12 +30,18 @@
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
+      <a href="#certificates">Certificates</a>
       <a href="#contact" class="nav-cta">Contact Me</a>
     </nav>
 
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark theme" title="Toggle dark / light theme">
+        <span class="theme-toggle__icon" id="themeIcon">🌙</span>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -40,18 +56,24 @@
         <h1 class="hero-title">
           Hi, <span class="highlight">I'm Thanakorn Khomkham</span>
         </h1>
-        <p class="hero-role">Java Developer · IT Support · Helpdesk</p>
+
+        <div class="role-pills">
+          <span class="role-pill role-pill--primary">Junior Developer</span>
+          <span class="role-pill">IT Support</span>
+          <span class="role-pill">Helpdesk</span>
+        </div>
+
         <p class="hero-desc">
           A fresh graduate in Information Systems with hands-on experience building
           web applications through a real internship at a technology company.
           Comfortable working full-stack, and genuinely enjoy helping people solve
           their IT problems. A quick learner who's always ready to pick up new
-          technologies.
+          technologies — currently looking for a Junior Developer or IT Support role.
         </p>
 
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Contact Me</a>
-          <a href="assets/Thanakorn_cv_engversion.pdf" class="btn btn-outline" download>↓ Download Resume</a>
+          <a href="assets/Thanakorn_Khomkham_Resume.pdf" class="btn btn-outline" download>↓ Download Resume</a>
         </div>
 
         <ul class="hero-meta">
@@ -75,11 +97,11 @@
         <p class="section-eyebrow">About Me</p>
         <h2 class="section-title">A little more about me</h2>
         <p class="about-text">
-          My name is Thanakorn. I studied Information Systems at Rajamangala
-          University of Technology Thanyaburi. During my studies, I interned as
-          a Java Developer at Advanced Research Group, where I got real
-          full-stack experience building both the frontend and backend of web
-          applications.
+          My name is Thanakorn. I studied Information Systems (B.B.A.) at
+          Rajamangala University of Technology Thanyaburi. During my studies, I
+          interned as a Java Developer at Advanced Research Group, where I got
+          real full-stack experience building both the frontend and backend of
+          web applications.
         </p>
         <p class="about-text">
           I currently work as an IT Automation &amp; AI Specialist at Gable Public
@@ -91,12 +113,12 @@
 
         <div class="about-cards">
           <div class="about-card">
-            <span class="about-card__num">2</span>
-            <span class="about-card__label">Work & internship experiences</span>
+            <span class="about-card__num">3</span>
+            <span class="about-card__label">Work &amp; internship experiences</span>
           </div>
           <div class="about-card">
             <span class="about-card__num">2</span>
-            <span class="about-card__label">Languages spoken</span>
+            <span class="about-card__label">Certificates earned</span>
           </div>
           <div class="about-card">
             <span class="about-card__num">14+</span>
@@ -205,6 +227,20 @@
           </div>
         </div>
 
+        <div class="timeline-item">
+          <div class="timeline-dot timeline-dot--soft"></div>
+          <div class="timeline-card">
+            <p class="timeline-date">March 2018 — May 2025</p>
+            <h3 class="timeline-role">Mascot Performer (Part-time)</h3>
+            <p class="timeline-company">Amusement Creation Company Limited</p>
+            <ul class="timeline-list">
+              <li>Performed as a costumed character in park events, parades, and live shows, keeping guests engaged</li>
+              <li>Worked closely with a performance team under tight schedules, building teamwork and adaptability</li>
+              <li>Kept up this part-time role for 7 years alongside school — a good example of reliability and time management</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -218,7 +254,7 @@
       <div class="edu-card">
         <div class="edu-card__icon">🎓</div>
         <div>
-          <h3 class="edu-card__title">Faculty of Business Administration — Information Systems</h3>
+          <h3 class="edu-card__title">Bachelor of Business Administration in Information Systems (B.B.A.)</h3>
           <p class="edu-card__school">Rajamangala University of Technology Thanyaburi</p>
           <p class="edu-card__date">July 2022 — April 2026</p>
         </div>
@@ -226,8 +262,41 @@
     </div>
   </section>
 
+  <!-- ============ CERTIFICATES ============ -->
+  <section id="certificates" class="section">
+    <div class="wrap">
+      <p class="section-eyebrow">Certificates</p>
+      <h2 class="section-title">Professional certificates</h2>
+      <p class="section-sub">Issued by the Thailand Professional Qualification Institute (TPQI). Click download to view the full certificate.</p>
+
+      <div class="cert-grid">
+
+        <article class="cert-card">
+          <img src="assets/cert-cybersecurity-thumb.jpg" alt="Cybersecurity Principle for Technology Practitioners certificate" class="cert-thumb">
+          <div class="cert-body">
+            <h3 class="cert-title">Cybersecurity Principle for Technology Practitioners (CS100)</h3>
+            <p class="cert-issuer">Thailand Professional Qualification Institute (TPQI) × National Board of Digital Economy and Society Office</p>
+            <p class="cert-date">Issued: 7 February 2026</p>
+            <a href="assets/Certificate-Cybersecurity-CS100.pdf" class="btn btn-outline btn-sm" download>↓ Download Certificate</a>
+          </div>
+        </article>
+
+        <article class="cert-card">
+          <img src="assets/cert-ecommerce-thumb.jpg" alt="E-Commerce Professional Level 4 certificate" class="cert-thumb">
+          <div class="cert-body">
+            <h3 class="cert-title">E-Commerce Professional — Level 4</h3><br>
+            <p class="cert-issuer">Digital Business &amp; E-Commerce, Thailand Professional Qualification Institute (TPQI)</p>
+            <p class="cert-date">Issued: 6 February 2026</p>
+            <a href="assets/Certificate-Ecommerce-L4.pdf" class="btn btn-outline btn-sm" download>↓ Download Certificate</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ============ CONTACT ============ -->
-  <section id="contact" class="section">
+  <section id="contact" class="section section-tint">
     <div class="wrap contact-wrap">
       <p class="section-eyebrow">Contact</p>
       <h2 class="section-title">Let's get in touch</h2>

@@ -31,6 +31,41 @@
   --radius-sm: 12px;
 }
 
+/* ---- dark theme override ---- */
+:root[data-theme="dark"]{
+  --bg:        #10161C;
+  --surface:   #171F27;
+  --tint:      #131A20;
+  --border:    #283340;
+
+  --ink:       #EAF0F4;
+  --ink-muted: #9AA7B4;
+  --ink-soft:  #6B7784;
+
+  --teal:      #2FC2B2;
+  --teal-dark: #6EE0D2;
+  --teal-tint: rgba(47,194,178,0.14);
+
+  --coral:     #FF9478;
+  --coral-tint:rgba(255,148,120,0.16);
+}
+
+body,
+.site-header,
+.contact-card,
+.timeline-card,
+.skill-card,
+.about-card,
+.languages-card,
+.edu-card,
+.cert-card,
+.contact-form,
+.field input,
+.field textarea,
+.photo-img{
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
 @media (prefers-reduced-motion: reduce){
   *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
 }
@@ -70,6 +105,7 @@ a{ color: var(--teal-dark); text-decoration: none; }
   top: 0;
   z-index: 100;
   background: rgba(250,248,243,0.9);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
 }
@@ -102,6 +138,27 @@ a{ color: var(--teal-dark); text-decoration: none; }
   border-radius: 999px;
 }
 .nav-cta:hover{ background: var(--teal-dark); }
+
+.header-actions{
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.theme-toggle{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.theme-toggle:hover{ border-color: var(--teal); transform: translateY(-1px); }
 
 .nav-toggle{
   display: none;
@@ -156,11 +213,25 @@ a{ color: var(--teal-dark); text-decoration: none; }
   border-radius: 3px;
 }
 
-.hero-role{
-  font-size: 1.2rem;
+.role-pills{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0 0 1.4rem;
+}
+.role-pill{
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--teal-dark);
-  margin: 0 0 1.2rem;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+}
+.role-pill--primary{
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
 }
 
 .hero-desc{
@@ -192,6 +263,7 @@ a{ color: var(--teal-dark); text-decoration: none; }
 .btn-outline{ border-color: var(--border); color: var(--ink); background: var(--surface); }
 .btn-outline:hover{ border-color: var(--teal); color: var(--teal-dark); }
 .btn-block{ width: 100%; text-align: center; border: none; cursor: pointer; }
+.btn-sm{ padding: 0.55rem 1.1rem; font-size: 0.85rem; }
 
 .hero-meta{
   list-style: none;
@@ -352,6 +424,7 @@ a{ color: var(--teal-dark); text-decoration: none; }
   border: 3px solid var(--teal-tint);
 }
 .timeline-dot--muted{ background: var(--coral); border-color: var(--coral-tint); }
+.timeline-dot--soft{ background: var(--ink-soft); border-color: var(--border); }
 
 .timeline-card{
   background: var(--surface);
@@ -393,6 +466,36 @@ a{ color: var(--teal-dark); text-decoration: none; }
 .edu-card__title{ margin: 0 0 0.3rem; font-size: 1.05rem; }
 .edu-card__school{ margin: 0 0 0.3rem; color: var(--ink-muted); }
 .edu-card__date{ margin: 0; font-size: 0.88rem; color: var(--ink-soft); }
+
+/* =============================================================
+   CERTIFICATES
+   ============================================================= */
+.cert-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.cert-card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.cert-thumb{
+  width: 100%;
+  aspect-ratio: 1.414 / 1;
+  object-fit: cover;
+  object-position: top;
+  border-bottom: 1px solid var(--border);
+  background: var(--tint);
+}
+.cert-body{ padding: 1.4rem 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.cert-title{ margin: 0; font-size: 1.05rem; }
+.cert-issuer{ margin: 0; color: var(--ink-muted); font-size: 0.9rem; }
+.cert-date{ margin: 0 0 0.6rem; font-size: 0.85rem; color: var(--ink-soft); }
+.cert-body .btn{ align-self: stretch; text-align: center; margin-top: auto; }
 
 /* =============================================================
    CONTACT
@@ -469,6 +572,7 @@ a{ color: var(--teal-dark); text-decoration: none; }
   .about-grid{ grid-template-columns: 1fr; }
   .skill-groups{ grid-template-columns: 1fr; }
   .contact-grid{ grid-template-columns: 1fr; }
+  .cert-grid{ grid-template-columns: 1fr; }
 }
 
 @media (max-width: 720px){
